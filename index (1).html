@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>A Little Surprise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #e6f0ff;
+  text-align: center;
+  color: #333;
+}
+
+header {
+  background: #000080;
+  color: white;
+  padding: 25px;
+}
+
+section {
+  padding: 30px;
+}
+
+.box {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 85%;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.hidden { display: none; }
+
+input, button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  margin: 6px;
+}
+
+button {
+  background: #000080;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #001f3f;
+}
+
+img {
+  width: 200px;
+  border-radius: 12px;
+  margin: 8px;
+}
+
+.poem {
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.6;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Welcome!</h1>
+<p>ENTER CODE AT YOUR OWN RISK!!</p>
+</header>
+
+<!-- LOGIN -->
+<section id="loginSection" class="box">
+<h2>Enter Secret Code</h2>
+<input type="password" id="codeInput" placeholder="Enter Code">
+<br>
+<button onclick="checkCode()">Enter</button>
+<p id="wrong" style="color:red; display:none;">Wrong Code</p>
+</section>
+
+<!-- MAIN -->
+<section id="mainContent" class="hidden">
+
+<div class="box">
+<h2>Photos 📸</h2>
+<img src="pic1.jpg">
+<img src="pic2.jpg">
+<img src="pic3.jpg">
+</div>
+
+<div class="box">
+<h2>Do you love me??</h2>
+<button onclick="yesClicked()">Yes</button>
+<button id="noBtn" onclick="turnYes()">No</button>
+</div>
+
+<div class="box">
+<h2>Hidden Note 🤫</h2>
+<button onclick="showSecret()">Open Secret</button>
+<p id="secretText" class="hidden">
+iloveyousm yaar, I'm so grateful and blessed to have you,<br>
+please cheat mt kriyega vrna mai ro dungi :(
+</p>
+</div>
+
+<div class="box">
+<h2>Time SINCE WE'RE TOGETHER!!</h2>
+<p id="daysCount">
+341 days, 29,462,400 seconds, 491,040 minutes, 8184 hours, 48 weeks and 5 days
+</p>
+</div>
+
+<div class="box">
+<h2>Message 💌</h2>
+<p class="poem">
+iloveyousomuch cutuuu,
+here's an old poem which I wrote for you last year, around July.
+
+In the silence, I whisper your name,
+A love so gentle, yet burning like flame.
+A heart that was mine, now lost in you,
+A feeling so heavy, yet painfully true.
+
+You think I chose you from so many hearts,
+But you were my world right from the start.
+
+Not an option, not one among few,
+I saw my forever the moment I saw you.
+
+Your eyes… they hold something I can’t explain,
+A soft kind of magic, a beautiful pain.
+They pull me closer, don’t let me go,
+Like they know things I’ll never show.
+
+Your lips, so quiet, yet loud in my mind,
+A single kiss—and I’d leave myself behind.
+Not out of weakness, but something divine,
+Like losing myself would finally feel right.
+
+Your cheeks, your smile, the way that you are,
+You don’t even try, yet you outshine stars.
+Every small detail, every tiny part,
+Feels like it was made just to steal my heart.
+
+I never believed in love that stays,
+In “forever” or in endless days.
+But then you came, and changed the view,
+Now every tomorrow begins with you.
+
+And still, there’s a fear I can’t deny,
+What if this love is just passing by?
+What if I’m holding something so true,
+That I was never meant to keep… even you?
+
+Yet I’ll love you quietly, deeply, the same,
+Through every doubt, through every flame.
+Because even if this love breaks me apart,
+It will always be yours—
+this helpless, honest heart. ❤️
+</p>
+</div>
+
+</section>
+
+<script>
+function checkCode() {
+  let code = document.getElementById("codeInput").value;
+  if (code === "2603") {
+    document.getElementById("loginSection").style.display = "none";
+    document.getElementById("mainContent").classList.remove("hidden");
+  } else {
+    document.getElementById("wrong").style.display = "block";
+  }
+}
+
+function yesClicked() {}
+
+function turnYes() {
+  let btn = document.getElementById("noBtn");
+  btn.innerText = "Yes";
+  btn.onclick = yesClicked;
+}
+
+function showSecret() {
+  document.getElementById("secretText").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
